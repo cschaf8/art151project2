@@ -1,0 +1,61 @@
+body{
+    background-color: grey;
+}
+p{
+    text-align: center;
+}
+h2{
+    text-align: center;
+}
+.startDiv{
+    width: 1024px;
+    height: 512px;
+    margin: auto;
+    border: 5px solid black;
+    background-color: white;
+}
+.viewDiv{
+    width: 1024px;
+    height: 512px;
+    margin: auto;
+    border: 5px solid black;
+    background-color: white;
+    background-image: url("images/start.jpg");
+}
+.optionContainer{
+    width:1030px;
+    height: 340px;
+    margin: auto;
+}
+.optionDiv{
+    width: 341px;
+    height: 80px;
+    float: left;
+    margin: auto;
+    border: 1px solid black;
+    background-color: white;
+}
+.waterDiv1{
+    width: 1024px;
+    height: 512px;
+    margin: auto;
+    border: 5px solid black;
+    background-color: white;
+    background-image: url("images/startWater.jpg");
+}
+.shelterDiv1{
+    width: 1024px;
+    height: 512px;
+    margin: auto;
+    border: 5px solid black;
+    background-color: white;
+    background-image: url("images/start.jpg");
+}
+.foodDiv1{
+    width: 1024px;
+    height: 512px;
+    margin: auto;
+    border: 5px solid black;
+    background-color: white;
+    background-image: url("images/startBerries.jpg");
+}
