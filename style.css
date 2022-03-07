@@ -6,6 +6,7 @@ p{
 }
 h2{
     text-align: center;
+    color: white;
 }
 .startDiv{
     width: 1024px;
@@ -20,12 +21,13 @@ h2{
     margin: auto;
     border: 5px solid black;
     background-color: white;
-    background-image: url("images/start.jpg");
+    background-image: url("images/gameboard1.png");
 }
 .optionContainer{
     width:1030px;
     height: 340px;
     margin: auto;
+    text-align: center;
 }
 .optionDiv{
     width: 341px;
