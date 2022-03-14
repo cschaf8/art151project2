@@ -49,13 +49,14 @@
         </map>
     </div>
     <div class="optionContainer">
-        <img src="images/0.png">
+        <p><span id="num"></span>/5</p>
     </div>
 
 <script>
     var correct = 0;
     var incorrect = 0;
     var clicks = 0;
+    document.getElementById("num").innerHTML = "0";
 
     function squareClick(id){
         clicks++;
@@ -87,7 +88,7 @@
         else if (id=="elk" && clicks==5) {
             correct = 5;
             console.log("correct",correct);
-            window.alert("You complete my small game!");
+            window.alert("You completed my small game!");
             location.replace("index.html")
         }
 
@@ -103,6 +104,8 @@
             }
             clicks--;
         }
+        document.getElementById("num").innerHTML = correct;
+
         //console.log(sessionStorage);
     }
 </script>

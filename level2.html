@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>its a game!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="viewDiv">
+        <img src="images/level2.png" usemap="#workmap">
+        <map name="workmap">
+            <area shape="rect" coords="0,0,256,256" id="q" onclick="squareClick(this.id)">
+            <area shape="rect" coords="256,0,512,256" id="a" onclick="squareClick(this.id)">
+            <area shape="rect" coords="512,0,768,256" id="v" onclick="squareClick(this.id)">
+            <area shape="rect" coords="768,0,1024,256" id="c" onclick="squareClick(this.id)">
+
+            <area shape="rect" coords="0,256,256,512" id="d" onclick="squareClick(this.id)">
+            <area shape="rect" coords="256,256,512,512" id="h" onclick="squareClick(this.id)">
+            <area shape="rect" coords="512,256,768,512" id="y" onclick="squareClick(this.id)">
+            <area shape="rect" coords="768,256,1024,512" id="b" onclick="squareClick(this.id)">
+        </map>
+    </div>
+    <div class="optionContainer">
+        <p><span id="num"></span>/4</p>
+    </div>
+
+<script>
+    var correct = 0;
+    var incorrect = 0;
+    var clicks = 0;
+    document.getElementById("num").innerHTML = "0";
+
+    function squareClick(id){
+        clicks++;
+        console.log(id);
+        sessionStorage.setItem("correct",0);
+        sessionStorage.setItem("incorrect",0);
+        console.log("clicks",clicks);
+
+        if (id=="a" && clicks==1) {
+            correct = 1;
+            console.log("correct",correct);
+            
+        } 
+        else if (id=="b" && clicks==2) {
+            correct = 2;
+            console.log("correct",correct);
+            
+        }
+        else if (id =="c" && clicks==3) {
+            correct = 3;
+            console.log("correct",correct);
+        }
+        else if (id =="d" && clicks==4) {
+            correct = 4;
+            console.log("correct",correct);
+            window.alert('You did it! Next level');
+            window.location = 'start.html';
+        }
+
+        else {
+            incorrect++;
+            console.log("incorrect",incorrect);
+            if(incorrect<3){
+                window.alert("Incorrect! Tries left: " + (3-incorrect));
+            }
+            else {
+                window.alert("Game over! Try again");
+                location.reload();
+            }
+            clicks--;
+        }
+        document.getElementById("num").innerHTML = correct;
+
+        //console.log(sessionStorage);
+    }
+</script>
+
+</body>
+</html>

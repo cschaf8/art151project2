@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>its a game!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="viewDiv">
+        <img src="images/testRound.png" usemap="#workmap">
+        <map name="workmap">
+            <area shape="rect" coords="0,0,512,512" id="1" onclick="squareClick(this.id)">
+
+            <area shape="rect" coords="512,0,1024,512" id="2" onclick="squareClick(this.id)">
+        </map>
+    </div>
+    <div class="optionContainer">
+        <p><span id="num"></span>/2</p>
+    </div>
+
+<script>
+    var correct = 0;
+    var incorrect = 0;
+    var clicks = 0;
+    document.getElementById("num").innerHTML = "0";
+
+    function squareClick(id){
+
+        clicks++;
+        console.log(id);
+        sessionStorage.setItem("correct",0);
+        sessionStorage.setItem("incorrect",0);
+        console.log("clicks",clicks);
+
+        if (id=="1" && clicks==1) {
+            correct = 1;
+            console.log("correct",correct);
+            
+        } 
+        else if (id=="2" && clicks==2) {
+            correct = 2;
+            console.log("correct",correct);
+            window.alert('You did it! Next level');
+            window.location = 'level2.html';
+        }
+
+        else {
+            incorrect++;
+            console.log("incorrect",incorrect);
+            if(incorrect<3){
+                window.alert("Incorrect! Tries left: " + (3-incorrect));
+            }
+            else {
+                window.alert("Game over! Try again");
+                location.reload();
+            }
+            clicks--;
+        }
+        document.getElementById("num").innerHTML = correct;
+
+        //console.log(sessionStorage);
+    }
+    
+</script>
+
+</body>
+</html>
